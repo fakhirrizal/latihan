@@ -23,6 +23,7 @@ class Home extends CI_Controller {
 		$data_tampil['data_dosen'] = $this->Master_model->manualQuery("SELECT a.* FROM dosen a WHERE a.deleted='0'");
 		$this->load->view('home',$data_tampil);
 	}
+	// fungsi menyimpan data
 	public function simpan_data(){
 		$this->db->trans_start();
 		for ($i=0; $i < COUNT($this->input->post('dosen')); $i++) {
